@@ -2,10 +2,18 @@
 Console.WriteLine("Hello, World!");
 
 Console.Write("Enter the first number:");
-int num1 = Convert.ToInt32(Console.ReadLine());
+int num1;
+if(!int.TryParse(Console.ReadLine(), out num1))
+{
+    Console.WriteLine("invalid input for the first number.");
+}
 
 Console.Write("Enter the second number:");
-int num2 = Convert.ToInt32(Console.ReadLine());
+int num2;
+if(!int.TryParse(Console.ReadLine(), out num2))
+{
+    Console.WriteLine("invalid input for the second number.");
+}
 
 int temp = num1;
 num1 = num2;
