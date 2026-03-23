@@ -7,7 +7,14 @@ int sum = 0;
 for (int i = 0; i < numbers.Length; i++)
 {
     Console.Write($"Enter integer no.{i + 1}: ");
-    numbers[i] = int.Parse(Console.ReadLine());
+
+    int number;
+    while (!int.TryParse(Console.ReadLine(), out number))
+    {
+        Console.WriteLine("Invalid input. Enter a valid number:");
+    }
+
+    numbers[i] = number;
 }
 
 foreach (int num in numbers)
